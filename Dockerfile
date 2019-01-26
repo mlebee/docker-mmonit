@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
 # Set environment
-ENV MMONIT_VERSION 3.7.1
+ENV MMONIT_VERSION 3.7.2
 ENV MMONIT_USER monit
 ENV MMONIT_ROOT /usr/local/mmonit
 ENV MMONIT_BIN $MMONIT_ROOT/bin/mmonit
