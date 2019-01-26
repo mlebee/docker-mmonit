@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 # Set environment
 ENV MMONIT_VERSION 3.7.1
