@@ -5,6 +5,7 @@ ENV MMONIT_VERSION 3.7.6
 ENV MMONIT_USER monit
 ENV MMONIT_ROOT /opt/mmonit
 ENV MMONIT_BIN $MMONIT_ROOT/bin/mmonit
+ENV MMONIT_UPGRADE $MMONIT_ROOT/upgrade/upgrade
 
 # Install prerequisites
 RUN apt-get -y update && apt-get -y install \
@@ -30,4 +31,4 @@ RUN ln -sf /dev/stdout $MMONIT_ROOT/logs/mmonit.log \
 
 # Run in foreground
 EXPOSE 8080
-ENTRYPOINT $MMONIT_BIN -i
+CMD $MMONIT_UPGRADE -c conf/server.xml && $MMONIT_BIN -i
